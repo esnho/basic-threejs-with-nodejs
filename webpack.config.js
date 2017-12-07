@@ -3,7 +3,7 @@ var webpack 		      = require('webpack'),
     HtmlWebpackPlugin	= require('html-webpack-plugin');
 
 var src             = './src',
-    entry 		      = path.resolve(src, 'js/app.js'),
+    entry 		      = path.resolve(src, 'js/index.js'),
     jsPath		      = './js/',
     outputName		  = 'bundle.js',
     nodeModulesPath	= path.join(__dirname, 'node_modules'),
