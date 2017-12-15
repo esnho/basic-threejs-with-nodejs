@@ -18,7 +18,14 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: "style!css" }
+            {
+              test: /\.css$/,
+              loader: "style!css"
+            },
+            {
+                test: /\.glsl$/,
+                loader: 'webpack-glsl'
+            }
         ],
         rules: [
           {
