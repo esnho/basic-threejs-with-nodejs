@@ -7,7 +7,7 @@ Then if you have git open a shell
 
 On Windows
 ```
-ctrl+
+ctrl+r
 ```
 then write
 ```
