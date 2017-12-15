@@ -7,8 +7,10 @@ Then if you have git open a shell
 
 On Windows
 ```
-ctrl+r
+ctrl+
+```
 then write
+```
 cmd
 ```
 On Mac
@@ -34,7 +36,7 @@ npm install
 npm run dev
 ```
 
-Open a browser and go to https://localhost:8080/
+Finally open a browser and go to https://localhost:8080/
 
 # Known issue
 On Windows to stop the server the user must kill the process. Use the `kilwin.bat` to kill the running server on port 8080, otherwise if you want to kill and start again use `startwin.bat`
