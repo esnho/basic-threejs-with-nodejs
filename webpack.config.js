@@ -1,5 +1,5 @@
-var webpack 		      = require('webpack'),
-    path		          = require('path'),
+var webpack = require('webpack'),
+    path = require('path'),
     HtmlWebpackPlugin	= require('html-webpack-plugin');
 
 var src             = './src',
@@ -14,7 +14,7 @@ module.exports = {
     entry: entry,
     output: {
         path: base,
-        filename: jsPath + outputName,
+        filename: path.join(jsPath, outputName),
     },
     module: {
         loaders: [
@@ -23,8 +23,13 @@ module.exports = {
               loader: "style!css"
             },
             {
-                test: /\.glsl$/,
-                loader: 'webpack-glsl'
+              test: /\.(glsl|vs|fs)$/,
+              loader: 'shader-loader',
+              options: {
+                glsl: {
+                  chunkPath: path.resolve('/glsl/chunks')
+                }
+              }
             }
         ],
         rules: [
