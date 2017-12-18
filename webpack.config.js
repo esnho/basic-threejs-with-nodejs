@@ -5,7 +5,7 @@ var webpack = require('webpack'),
 var src             = './src',
     entry 		      = path.resolve(src, 'js/index.js'),
     jsPath		      = './js/',
-    outputName		  = 'bundle.js',
+    outputName		  = 'bundle.min.js',
     nodeModulesPath	= path.join(__dirname, 'node_modules'),
     base		        = path.join(__dirname, 'dist'),
     templates       = path.join(__dirname, src+'/index.html');
@@ -51,6 +51,7 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     plugins: [
-        new HtmlWebpackPlugin({template: templates, filename: "./index.html"})
+        new HtmlWebpackPlugin({template: templates, filename: "./index.html"}),
+        new webpack.optimize.UglifyJsPlugin({minimize: true})
     ]
 };
