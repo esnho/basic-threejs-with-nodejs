@@ -17,17 +17,17 @@ require('../css/style.css');
 //require('./007-populate-the-scene.js');
 
 // Decomment these lines to start a not very complex app
-import App from './App/app.js';
-const app = new App();
-const maxCubes = 15;
-const distribution = 5;
-for (let i = 0; i < 15; i++) {
-  let newPosition = new THREE.Vector3(
+import CrazyScene from './App/crazyScene.js';
+const crazyScene = new CrazyScene();
+const maxCubes = 60;
+const distribution = 15;
+for (let i = 0; i < maxCubes; i++) {
+  const newPosition = new THREE.Vector3(
     Math.random() * distribution - distribution * 0.5,
     Math.random() * distribution - distribution * 0.5,
     Math.random() * distribution - distribution * 0.5
   );
-  let newSize = (Math.random() + 0.65) * 0.45;
-  app.addCube(newPosition, newSize);
+  const newSize = (Math.random() + 0.65) * 0.45;
+  crazyScene.addCube(newPosition, newSize);
 }
-app.startRender();
+crazyScene.startRender();
