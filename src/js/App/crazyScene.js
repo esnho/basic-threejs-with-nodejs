@@ -4,8 +4,6 @@ export default class CrazyScene {
   constructor() {
     this.cubes = [];
     this.switchLookAtEveryMilliseconds = 900;
-
-    this.clock = new THREE.Clock(true);
     this.scene = new THREE.Scene();
 
     this.mainCamera = new AnimatedLookAtCamera(
@@ -53,8 +51,6 @@ export default class CrazyScene {
   animate() {
     this.cubes.map(cube => cube.animate());
     this.mainCamera.animate();
-
-    const elapsedTime = this.clock.getElapsedTime();
   }
 
   startRender() {
