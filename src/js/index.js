@@ -14,7 +14,11 @@ require('../css/style.css');
 //require('./006-scene-essentials.js');
 
 // decomment this to use the 007 lesson's code
-require('./007-populate-the-scene.js');
+//require('./007-populate-the-scene.js');
+
+//require('./008-Create-a-ground-plane.js');
+
+require('./009-Three.js-objects.js');
 
 // Decomment these lines to start a not very complex app
 /*import CrazyScene from './App/crazyScene.js';
