@@ -28,9 +28,14 @@ function init() {
 
 function getBox(w, h, d) {
   var geometry = new THREE.BoxGeometry(w, h, d);
+
+  var color = new THREE.Color();
+  color.setRGB(1, 1, 0);
+
   var material = new THREE.MeshBasicMaterial({
-    color: 0x00ff00
+    color: color//0x00ff00
   });
+
   var mesh = new THREE.Mesh(
     geometry,
     material
