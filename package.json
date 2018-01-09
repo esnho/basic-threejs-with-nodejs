@@ -20,7 +20,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --colors",
-    "dev": "webpack-dev-server --progress --colors --port 8080"
+    "dev": "webpack-dev-server --progress --colors"
   },
   "author": "Luca esnho Moroni",
   "license": "ISC"

@@ -17,7 +17,7 @@ export default class CrazyScene {
     this.initializeAutomaticLookAt();
 
     this.startRender = this.startRender.bind(this);
-  }
+  } 
 
   setupRenderer() {
     this.renderer = new THREE.WebGLRenderer();

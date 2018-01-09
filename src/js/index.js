@@ -14,10 +14,10 @@ require('../css/style.css');
 //require('./006-scene-essentials.js');
 
 // decomment this to use the 007 lesson's code
-//require('./007-populate-the-scene.js');
+require('./007-populate-the-scene.js');
 
 // Decomment these lines to start a not very complex app
-import CrazyScene from './App/crazyScene.js';
+/*import CrazyScene from './App/crazyScene.js';
 const crazyScene = new CrazyScene();
 const maxCubes = 60;
 const distribution = 15;
@@ -30,4 +30,4 @@ for (let i = 0; i < maxCubes; i++) {
   const newSize = (Math.random() + 0.65) * 0.45;
   crazyScene.addCube(newPosition, newSize);
 }
-crazyScene.startRender();
+crazyScene.startRender();*/
