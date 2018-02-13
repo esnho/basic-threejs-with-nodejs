@@ -29,7 +29,7 @@ function init() {
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild( renderer.domElement );
-  renderer.render(scene, camera);
+  update(renderer, scene, camera);
 
   return scene;
 }
@@ -70,6 +70,13 @@ function getBox(w, h, d) {
   );
 
   return mesh;
+}
+
+function update(renderer, scene, camera) {
+  renderer.render(scene, camera);
+  requestAnimationFrame(function() {
+    update(renderer, scene, camera);
+  });
 }
 
 window.scene = init();
