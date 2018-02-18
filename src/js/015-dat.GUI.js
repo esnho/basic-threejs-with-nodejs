@@ -1,10 +1,11 @@
 import * as THREE from 'three';
-import dat from 'dat.gui'; // added this import
+import dat from 'dat.gui'; // added this import FOR GUI
 // https://github.com/dataarts/dat.gui/blob/master/API.md
 
 function init() {
   var scene = new THREE.Scene();
-  var gui = new dat.GUI(); // initialize the GUI
+  // initialize the GUI
+  var gui = new dat.GUI();
 
   var fogColor = new THREE.Color();
   fogColor.setRGB(0.15, 0.15, 0.15);
@@ -21,28 +22,26 @@ function init() {
   var sphere = getSphere(0.05);
 
   pointLight.name = 'pLight';
-
-  gui.add(pointLight, 'intensity', 0, 10);
-  var ctrlLightPosY = gui.add(pointLight.position, 'y', 0, 5);
-  ctrlLightPosY.setValue(2);
+  pointLight.add(sphere);
+  pointLight.position.y = 2;
 
   bordo1.position.y = 0.5;
   bordo1.position.z = -0.5;
-  box.add(bordo1);
 
-  pointLight.add(sphere);
+  box.add(bordo1);
+  box.position.y = box.geometry.parameters.height*0.5;
 
   plane.name = 'plane-1';
-
-  box.position.y = box.geometry.parameters.height*0.5;
   plane.rotation.x = Math.PI*0.5;
-
-
-  pointLight.position.y = 2;
 
   scene.add(box);
   scene.add(plane);
   scene.add(pointLight);
+
+// SET THE GUI
+  gui.add(pointLight, 'intensity', 0, 10);
+  var ctrlLightPosY = gui.add(pointLight.position, 'y', 0, 5);
+  ctrlLightPosY.setValue(2);
 
   var camera = new THREE.PerspectiveCamera(
     45,
@@ -54,15 +53,14 @@ function init() {
   camera.position.x = -5;
   camera.position.y = 2;
   camera.position.z = 5;
-
   camera.lookAt(box.position);
 
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(fogColor);
   document.body.appendChild( renderer.domElement );
-  update(renderer, scene, camera);
 
+  update(renderer, scene, camera);
   return scene;
 }
 
