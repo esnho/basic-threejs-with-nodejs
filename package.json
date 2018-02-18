@@ -4,6 +4,7 @@
   "description": "ThreeJS setup over a basic webpack server with ES2015, CSS, and webpack server",
   "main": "index.js",
   "dependencies": {
+    "dat.gui": "^0.7.1",
     "three": "^0.88.0"
   },
   "devDependencies": {

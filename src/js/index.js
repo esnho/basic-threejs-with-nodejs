@@ -2,6 +2,7 @@
  * to eliminate margins on the page
  */
 import * as THREE from 'three';
+
 require('../css/style.css');
 
 /* in this index file I will accumulate files created
@@ -24,7 +25,11 @@ require('../css/style.css');
 //require('./011-Other-Object-3D-Properties.js');
 //require('./012-Adding-Fog-To-The-Scene.js');
 //require('./013-Lighting-In-Threejs.js');
-require('./014-Light-types.js');
+//require('./014-Light-types.js');
+require('./015-dat.GUI.js');
+
+
+
 // Decomment these lines to start a not very complex app
 /*import CrazyScene from './App/crazyScene.js';
 const crazyScene = new CrazyScene();
