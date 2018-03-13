@@ -26,8 +26,9 @@ require('../css/style.css');
 //require('./012-Adding-Fog-To-The-Scene.js');
 //require('./013-Lighting-In-Threejs.js');
 //require('./014-Light-types.js');
-require('./015-dat.GUI.js');
-
+//require('./015.js');
+//require('./015-dat.GUI.js');
+require('./016.js');
 
 
 // Decomment these lines to start a not very complex app

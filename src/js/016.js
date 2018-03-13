@@ -1,7 +1,12 @@
 import * as THREE from 'three';
+import dat from 'dat.gui';
+var OrbitControls = require('three-orbit-controls')(THREE);
+
+var velocity = {value:0};
 
 function init() {
   var scene = new THREE.Scene();
+  var gui = new dat.GUI();
 
   var fogColor = new THREE.Color();
   fogColor.setRGB(0.15, 0.15, 0.15);
@@ -31,8 +36,8 @@ function init() {
   box.position.y = box.geometry.parameters.height*0.5;
   plane.rotation.x = Math.PI*0.5;
 
-
   pointLight.position.y = 2;
+
 
   scene.add(box);
   scene.add(plane);
@@ -59,8 +64,13 @@ function init() {
   renderer.setClearColor(fogColor);
   document.body.appendChild( renderer.domElement );
 
-  update(renderer, scene, camera);
+  var controls = new OrbitControls(camera);
 
+  update(renderer, scene, camera, controls);
+
+  gui.add(pointLight, 'intensity', 0, 10);
+  gui.add(pointLight.position, 'y', 0,5);
+  gui.add(velocity, 'value', -10, 10).listen();
   return scene;
 }
 
@@ -129,20 +139,23 @@ function getSphere(size, r = 1, g = 1, b = 1) {
   return mesh;
 }
 
-function update(renderer, scene, camera) {
+function update(renderer, scene, camera, controls) {
 
-  /*var plane = scene.getObjectByName('plane-1');
-  plane.rotation.y = plane.rotation.y + 0.001;
-  plane.rotation.z = plane.rotation.z + 0.001;*/
+  var plane = scene.getObjectByName('plane-1');
+  plane.rotation.y = plane.rotation.y + 0.001 * velocity.value;
+  plane.rotation.z = plane.rotation.z + 0.001 * velocity.value;
   /*var box = scene.getObjectByName('boxone');
   box.traverse(function(child) {
     child.scale.x += 0.001;
   });*/
 
+  controls.update();
+
   renderer.render(scene, camera);
   requestAnimationFrame(function() {
-    update(renderer, scene, camera);
+    update(renderer, scene, camera, controls);
   });
 }
 
 window.scene = init();
+window.velocity = velocity;

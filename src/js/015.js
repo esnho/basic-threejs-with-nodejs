@@ -1,7 +1,11 @@
 import * as THREE from 'three';
+import dat from 'dat.gui';
+
+var velocity = {value:0};
 
 function init() {
   var scene = new THREE.Scene();
+  var gui = new dat.GUI();
 
   var fogColor = new THREE.Color();
   fogColor.setRGB(0.15, 0.15, 0.15);
@@ -31,8 +35,8 @@ function init() {
   box.position.y = box.geometry.parameters.height*0.5;
   plane.rotation.x = Math.PI*0.5;
 
-
   pointLight.position.y = 2;
+
 
   scene.add(box);
   scene.add(plane);
@@ -61,6 +65,9 @@ function init() {
 
   update(renderer, scene, camera);
 
+  gui.add(pointLight, 'intensity', 0, 10);
+  gui.add(pointLight.position, 'y', 0,5);
+  gui.add(velocity, 'value', -10, 10).listen();
   return scene;
 }
 
@@ -131,9 +138,9 @@ function getSphere(size, r = 1, g = 1, b = 1) {
 
 function update(renderer, scene, camera) {
 
-  /*var plane = scene.getObjectByName('plane-1');
-  plane.rotation.y = plane.rotation.y + 0.001;
-  plane.rotation.z = plane.rotation.z + 0.001;*/
+  var plane = scene.getObjectByName('plane-1');
+  plane.rotation.y = plane.rotation.y + 0.001 * velocity.value;
+  plane.rotation.z = plane.rotation.z + 0.001 * velocity.value;
   /*var box = scene.getObjectByName('boxone');
   box.traverse(function(child) {
     child.scale.x += 0.001;
@@ -146,3 +153,4 @@ function update(renderer, scene, camera) {
 }
 
 window.scene = init();
+window.velocity = velocity;

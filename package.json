@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "dat.gui": "^0.7.1",
-    "three": "^0.88.0"
+    "three": "^0.88.0",
+    "three-orbit-controls": "^82.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
