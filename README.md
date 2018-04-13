@@ -1,7 +1,14 @@
-# basic-threejs-with-nodejs
+# Milano Live Coding ThreeJS group tutorial
+This code is a common reference for our meeting with Codice Inutile during Milano Live Coding.
+We are exploring toghether ThreeJS and learning it a bit.
+
+**THIS CODE IS NOT WELL WRITTEN**
+
+**If you are interested in our meeting follow the [Facebook Group](https://www.facebook.com/groups/1541449069410868/)**
+
 ThreeJS setup over a basic webpack server with ES2015, CSS, and webpack server
 
-This project assume that you have instaled [NodeJS](https://nodejs.org/it/download/) and [Git](https://git-scm.com/downloads) in your system.
+This project assume that you have installed [NodeJS](https://nodejs.org/it/download/) and [Git](https://git-scm.com/downloads) in your system.
 
 Then if you have git open a shell
 
