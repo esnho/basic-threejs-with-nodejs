@@ -1,7 +1,7 @@
 /* import THREE library along with a simple css used
  * to eliminate margins on the page
  */
-import * as THREE from 'three';
+//import * as THREE from 'three';
 
 require('../css/style.css');
 
